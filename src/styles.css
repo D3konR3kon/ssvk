@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: rgba(122, 120, 120, 0.185);
+}
+.col{
+    
+}
+.card::before{
+    background: rgba(53, 53, 53, 0.47);
+    filter: blur(62px);
+}
+.card{
+    
+    color: #17a2b8;
+    border: 5px solid#ebe9e9;
+}
+.card:hover{
+    
+    box-shadow: 0 0 60px rgba(93, 70, 232, 0.15);
+    
+}
+.card-body{
+    color: #3f345f;
+}
+.btn{
+    width: 60px;
+    height: 35px;
+    background-color: #e25300;
+    border:inherit;
+    border-radius: .5em;
+    color: #ffffff;
+}
