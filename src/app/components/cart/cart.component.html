@@ -1,4 +1,4 @@
-
+<!-- <app-navbar></app-navbar>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark bg-light
     ">
@@ -25,7 +25,7 @@
       </div>
     </nav>
   </header>
-<div class="cart-item" *ngFor="let item of items;let i=index">
+<div class=" row cart-item" *ngFor="let item of items;let i=index">
 
   <label for="name"></label><span>{{ item.name }}</span>
   <button (click)="increment(item.quantity, i)">+</button>
@@ -38,4 +38,56 @@
 
 
 
-<p>{{totalAmount}}</p>
+<p>{{totalAmount}}</p> -->
+<div class="container bg-white rounded-top mt-5" id="zero-pad">
+  <div class="row d-flex justify-content-center">
+      <div class="col-lg-10 col-12 pt-3" *ngFor="let item of items;let i=index" >
+        
+  
+        
+          <div class="d-flex flex-row px-lg-5 mx-lg-5 mobile" id="heading">
+            <div class="px-lg-5 ml-lg-5" id="prc">
+              <img src={{item.image}} width="150px" height="150px"  >
+            </div>
+              <div class="px-lg-5 ml-lg-5" id="prc"><h4>{{item.name}}</h4></div>
+              <div class="px-lg-5 ml-lg-5" id="prc">
+                <h1>PRICE</h1>
+                <h4>R{{ item.price }}</h4>
+              </div>
+              <div class="px-lg-5 ml-lg-1" id="quantity">
+                <h1>QUANTITY</h1>
+                <button (click)="increment(item.quantity, i)">+</button>
+                <input id=demoInput type=number min=1 max=5 [(ngModel)]="item.quantity" >
+                <button (click)="decrement(item.quantity, i)">-</button>
+              </div>
+              <div class="px-lg-5 ml-lg-1 pt-3" id="quantity">
+                
+                <p></p>
+                <p></p>
+                <button (click)="deletei(i)">X</button>
+              </div>
+              
+              
+          </div>
+         
+
+      </div>
+  </div>
+</div>
+<!-- <div class="container bg-light rounded-bottom py-4" id="zero-pad">
+  <div class="row d-flex justify-content-center">
+      <div class="col-lg-10 col-12">
+          <div class="d-flex justify-content-between align-items-center">
+              <div>
+                  <button class="btn btn-sm bg-light border border-dark">GO BACK</button>
+              </div>
+              <div class="px-md-0 px-1" id="footer-font">
+                  <b class="pl-md-4">SUBTOTAL<span class="pl-md-4">$61.78</span></b>
+              </div>
+              <div>
+                  <button class="btn btn-sm bg-dark text-white px-lg-5 px-3">CONTINUE</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> -->

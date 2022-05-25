@@ -3,7 +3,7 @@
     <div class="row justify-content-evenly">
         <div class="col-lg-4 pt-3" *ngIf="product">
           <div class="card">
-            <img src="https://cdn.zando.co.za/p/417501-8540-105714-2-400x.jpg-400x.jpg" alt="" >
+            <img src={{product.image}} alt="" >
 
             <div class="card-body">
               <h1>{{product.name}}.</h1>
@@ -13,7 +13,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   
-                  <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addToCart(product)">cart</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary vc2" (click)="addToCart(product)">Add to cart</button>
                 </div>
                 
               </div>

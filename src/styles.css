@@ -3,9 +3,14 @@ body{
     font-family: 'Montserrat Alternates', sans-serif;
     background-color: rgba(122, 120, 120, 0.185);
 }
-.col{
-    
+.navbar-brand{
+    color: navy !important;
+    font-size: 1rem;
 }
+.nav-link{
+    color: navy !important;
+}
+
 .card::before{
     background: rgba(53, 53, 53, 0.47);
     filter: blur(62px);
@@ -44,13 +49,13 @@ body{
     
 }
 .btn.vc1{
-    color: #e25300;
+    color: navy;
     background-color: #fff;
     border: 2px solid #e25300 ;
     
 }
 .btn.vc2{
     color: #ffffff;
-    background-color: #e25300;
-    border: 2px solid #e25300 
+    background-color: navy;
+    border: 2px solid navy;
 }
