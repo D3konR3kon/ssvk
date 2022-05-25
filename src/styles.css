@@ -23,11 +23,34 @@ body{
 .card-body{
     color: #3f345f;
 }
-.btn{
-    width: 60px;
+.btn-group{
+    display: flex;
+    align-items: center;
+    
+    
+   
+    gap: 10px;
+
+    
+    
+}
+.btn.vc{
+    width: 40px;
     height: 35px;
     background-color: #e25300;
     border:inherit;
     border-radius: .5em;
     color: #ffffff;
+    
+}
+.btn.vc1{
+    color: #e25300;
+    background-color: #fff;
+    border: 2px solid #e25300 ;
+    
+}
+.btn.vc2{
+    color: #ffffff;
+    background-color: #e25300;
+    border: 2px solid #e25300 
 }

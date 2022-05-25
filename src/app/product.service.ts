@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { PRODUCTS } from './mock-products';
 import { Product } from './product';
 import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -9,21 +10,23 @@ import { Observable, of } from 'rxjs';
 })
 export class ProductService {
 
+  private productsUrl = 'api/products'
  
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+    // private messageService: MessageService
+    ) { }
 
   
-  getProducts(): Observable<Product[]> {
-    const products = of(PRODUCTS);
-    return products;
-  }
+  /** GET heroes from the server */
+getProducts(): Observable<Product[]> {
+  return this.http.get<Product[]>(this.productsUrl)
+}
+  
 
-  getProduct(id: number): Observable<Product> {
-    // For now, assume that a hero with the specified `id` always exists.
-    // Error handling will be added in the next step of the tutorial.
-    const hero = PRODUCTS.find(p => p.id === id)!;
-    
-    return of(hero);
+getProduct(id: number): Observable<Product> {
+  const url = `${this.productsUrl}/${id}`;
+  return this.http.get<Product>(url)
   }
 }
 
