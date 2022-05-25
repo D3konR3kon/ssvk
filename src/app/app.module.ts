@@ -12,7 +12,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { Error404Component } from './components/error404/error404.component';
-
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +28,7 @@ import { Error404Component } from './components/error404/error404.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     )

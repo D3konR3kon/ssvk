@@ -66,7 +66,7 @@
                       <div class="btn-group">
                         
                         <button type="button" routerLink="/details/{{product.id}}" class="btn btn-sm btn-outline-secondary vc1">View</button>
-                        <button type="button" routerLink="/cart" class="btn btn-sm btn-outline-secondary vc2">cart</button>
+                        <button type="button" (click)="addToCart(product)" class="btn btn-sm btn-outline-secondary vc2">cart</button>
                       </div>
                       
                     </div>

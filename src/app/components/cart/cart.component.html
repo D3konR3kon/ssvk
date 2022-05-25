@@ -26,10 +26,16 @@
     </nav>
   </header>
 <div class="cart-item" *ngFor="let item of items;let i=index">
-  <span>{{ item.name }}</span>
-  <span>{{ item.price | currency }}</span>
-<p>{{item.quantity}}</p>
-<button type="button"(click)="deletei(i)">x</button>
 
-
+  <label for="name"></label><span>{{ item.name }}</span>
+  <button (click)="increment(item.quantity, i)">+</button>
+  <input id=demoInput type=number min=1 max=5 [(ngModel)]="item.quantity" >
+  <button (click)="decrement(item.quantity, i)">-</button>
+  <p><span>{{ item.price | currency }}</span></p>
+  <p></p>
+  <button (click)="deletei(i)">X</button>
 </div>
+
+
+
+<p>{{totalAmount}}</p>
