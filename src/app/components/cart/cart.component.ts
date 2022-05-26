@@ -47,7 +47,17 @@ export class CartComponent implements OnInit {
       return total;
     }
   
-  }
+  
+    increment(quantity: any, index: number){
+      quantity++
+      this.items[index].quantity = quantity
+      this.total()
+    }
+    decrement(quantity: any, index: number){
+      quantity--
+      this.items[index].quantity = quantity
+      this.total()
+    }}
  
 
 
