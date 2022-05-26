@@ -2,6 +2,9 @@ body{
     background-color: #eeeeee;
 }
 
+.container{
+    margin-top: 5rem;
+}
 .footer-background{
     background-color: rgb(204, 199, 199);
 }

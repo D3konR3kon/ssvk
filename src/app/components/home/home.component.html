@@ -56,14 +56,14 @@
                   <img src={{product.image}} alt="" >
       
                   <div class="card-body">
-                    <h1>{{product.name}}.</h1>
+                    <h4>{{product.name}}.</h4>
                     <p>R{{product.price}}.</p>
               
                     <div class="">
                       <div class="btn-group">
                         
                         <button type="button" routerLink="/details/{{product.id}}" class="btn btn-sm btn-outline-secondary vc1">View</button>
-                        <button type="button" (click)="addToCart(product)" class="btn btn-sm btn-outline-secondary vc2">cart</button>
+                        <button type="button" (click)="addToCart(product)" class="btn btn-sm btn-outline-secondary vc2">Add to cart</button>
                       </div>
                       
                     </div>

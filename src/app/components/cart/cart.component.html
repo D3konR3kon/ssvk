@@ -1,31 +1,6 @@
-<!-- <app-navbar></app-navbar>
-<header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-light
-    ">
-      <div class="container">
-        <a class="navbar-brand" href="#">SSVk</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-         
-          <button type="button" routerLink="/cart" class="btn btn-sm btn-outline-secondary vc2">cart</button>
-        </div>
-      </div>
-    </nav>
-  </header>
-<div class=" row cart-item" *ngFor="let item of items;let i=index">
+
+
+<!--<div class=" row cart-item" *ngFor="let item of items;let i=index">
 
   <label for="name"></label><span>{{ item.name }}</span>
   <button (click)="increment(item.quantity, i)">+</button>
@@ -39,41 +14,7 @@
 
 
 <p>{{totalAmount}}</p> -->
-<div class="container bg-white rounded-top mt-5" id="zero-pad">
-  <div class="row d-flex justify-content-center">
-      <div class="col-lg-10 col-12 pt-3" *ngFor="let item of items;let i=index" >
-        
-  
-        
-          <div class="d-flex flex-row px-lg-5 mx-lg-5 mobile" id="heading">
-            <div class="px-lg-5 ml-lg-5" id="prc">
-              <img src={{item.image}} width="150px" height="150px"  >
-            </div>
-              <div class="px-lg-5 ml-lg-5" id="prc"><h4>{{item.name}}</h4></div>
-              <div class="px-lg-5 ml-lg-5" id="prc">
-                <h1>PRICE</h1>
-                <h4>R{{ item.price }}</h4>
-              </div>
-              <div class="px-lg-5 ml-lg-1" id="quantity">
-                <h1>QUANTITY</h1>
-                <button (click)="increment(item.quantity, i)">+</button>
-                <input id=demoInput type=number min=1 max=5 [(ngModel)]="item.quantity" >
-                <button (click)="decrement(item.quantity, i)">-</button>
-              </div>
-              <div class="px-lg-5 ml-lg-1 pt-3" id="quantity">
-                
-                <p></p>
-                <p></p>
-                <button (click)="deletei(i)">X</button>
-              </div>
-              
-              
-          </div>
-         
 
-      </div>
-  </div>
-</div>
 <!-- <div class="container bg-light rounded-bottom py-4" id="zero-pad">
   <div class="row d-flex justify-content-center">
       <div class="col-lg-10 col-12">
@@ -91,3 +32,55 @@
       </div>
   </div>
 </div> -->
+<!------ Include the above in your HEAD tag ---------->
+
+
+<div class="container mt-10">
+    <div class="card">
+            <div class="card-header bg-dark text-light">
+                
+              
+                <a class="btn btn-outline-info btn-sm pull-right">TROLLEY SUMMARY</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="card-body">
+
+                <div class="row mt-3" *ngFor="let item of items;let i=index">
+                    <div class="col-xs-2 col-md-2">
+                        <img class="img-responsive" src={{item.image}} style="width: 150px; height: 150px;">
+                    </div>
+                    <div class="col-xs-4 col-md-6">
+                        <h4 class="product-name"><strong>{{item.name}}</strong></h4>
+                        <br>
+                        <h6><small>{{item.description}}</small></h6>
+                    </div>
+                    <div class="col-xs-6 col-md-4 row">
+                        <div class="col-xs-6 col-md-6 text-right" style="padding-top: 5px">
+                            <h6><strong>{{item.price}}<span class="text-muted">x</span></strong></h6>
+                        </div>
+                        <div class="col-xs-4 col-md-4">
+                            <input type="text" class="form-control input-sm" [(ngModel)]="item.quantity">
+                        </div>
+                        <div class="col-xs-2 col-md-2">
+                            <button type="button" class="btn btn-outline-danger btn-xs" (click)="deletei(i)">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+               
+
+                <hr>
+                <div class="pull-right">
+                   
+                </div>
+            </div>
+            <div class="card-footer ms-auto">
+                
+                <div class="pull-right" style="margin: 5px">
+                    Total Amount: <b>R{{totalAmount}}</b>
+                </div>
+            </div>
+        </div>
+</div>

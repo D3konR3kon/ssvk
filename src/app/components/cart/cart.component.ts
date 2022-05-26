@@ -11,13 +11,13 @@ import { CartService } from '../../cart.service';
 export class CartComponent implements OnInit {
   product !: Product
   items: any
-  totalAmount=0;
-
+  totalAmount : number= 0
+ 
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.getItems()
-    this.total();
+    this.getTotal();
   }
   getItems(){
     this.items = this.cartService.getItems();
@@ -29,24 +29,24 @@ export class CartComponent implements OnInit {
   }
 
   //adding total
-    total(){
-      this.items.map( (elem: any) => {
-        if(elem.quantity) {
-          this.totalAmount += elem.price*elem.quantity
-        }
-      })
+    // total(){
+    //   this.items.map( (elem: any) => {
+    //     if(elem.quantity) 
+    //       this.totalAmount += elem.price*elem.quantity
+        
+    //   })
+    // }
+    getTotal(){
+      let total = 0;
+      for (var i = 0; i < this.items.length; i++) {
+          if (this.items[i].price) {
+              total += this.items[i].price * this.items[i].quantity;
+              this.totalAmount = total;
+          }
+      }
+      return total;
     }
-
-    increment(quantity: any, index: number){
-      quantity++
-      this.items[index].quantity = quantity
-      this.total()
-    }
-    decrement(quantity: any, index: number){
-      quantity--
-      this.items[index].quantity = quantity
-      this.total()
-    }
+  
   }
  
 

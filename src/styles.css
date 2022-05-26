@@ -42,7 +42,7 @@ body{
 .btn.vc{
     width: 40px;
     height: 35px;
-    background-color: #e25300;
+    background-color: navy;
     border:inherit;
     border-radius: .5em;
     color: #ffffff;
@@ -51,7 +51,7 @@ body{
 .btn.vc1{
     color: navy;
     background-color: #fff;
-    border: 2px solid #e25300 ;
+    border: 2px solid navy ;
     
 }
 .btn.vc2{
