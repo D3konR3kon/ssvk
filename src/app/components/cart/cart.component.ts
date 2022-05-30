@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../product';
 import { CartService } from '../../cart.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -34,6 +35,9 @@ export class CartComponent implements OnInit {
     this.Total();
   
   }
+  qntUpdate($event: any) {
+    this.Total();
+  }
   
   Total() {
     this.totalAmount = 0
@@ -41,6 +45,13 @@ export class CartComponent implements OnInit {
       this.totalAmount += (item.quantity * item.price)
     })
   }
+
+  // checkout(){
+  //   this.location.back()
+  //   alert(`Thank you for visiting us, your total price it: R ${this.total}`)
+  //   localStorage.removeItem('cart')
+    
+  
   // //adding total
   //   // total(){
   //   //   this.items.map( (elem: any) => {
@@ -69,17 +80,19 @@ export class CartComponent implements OnInit {
     // }
     
   
-    // increment(quantity: any, index: number){
-    //   quantity++
-    //   this.items[index].quantity = quantity
-    //   this.total()
-    // }
-    // decrement(quantity: any, index: number){
-    //   quantity--
-    //   this.items[index].quantity = quantity
-    //   this.total()
-    // }}
- 
-  }
-
+    incre(quantity: any, index: number){
+      quantity++
+      this.items[index].quantity = quantity
+      this.Total()
+    }
+    decr(quantity: any, index: number){
+      
+    if(quantity > 1)
+    quantity--
+      this.items[index].quantity = quantity
+      this.Total()
+     
+    }
+  
+}
 

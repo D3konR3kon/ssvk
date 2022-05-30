@@ -41,6 +41,7 @@
                 
               
                 <a class="btn btn-outline-info btn-sm pull-right">TROLLEY SUMMARY</a>
+                <button></button>
                 <div class="clearfix"></div>
             </div>
             <div class="card-body">
@@ -55,11 +56,13 @@
                         <h6><small>{{item.description}}</small></h6>
                     </div>
                     <div class="col-xs-6 col-md-4 row">
-                        <div class="col-xs-6 col-md-6 text-right" style="padding-top: 5px">
+                        <div class="col-xs-6 col-md-4 text-right" style="padding-top: 5px">
                             <h6><strong>{{item.price}}<span class="text-muted">x</span></strong></h6>
                         </div>
                         <div class="col-xs-4 col-md-4">
-                            <input type="text" class="form-control input-sm" [(ngModel)]="item.quantity">
+                            <button (click)="incre(item.quantity, i)">+</button>
+                            <input type="number" class="form-control input-sm" min="1" max="5" [(ngModel)]="item.quantity"  (ngModelChange)="qntUpdate($event)">
+                            <button (click)="decr(item.quantity, i)">-</button>
                         </div>
                         <div class="col-xs-2 col-md-2">
                             <button type="button" class="btn btn-outline-danger btn-xs" (click)="deletei(i)">
