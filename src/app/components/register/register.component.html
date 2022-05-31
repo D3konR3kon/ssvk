@@ -1,1 +1,29 @@
-<p>register works!</p>
+
+
+
+<body>
+    
+
+
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <div class="form">
+        <h3>Sign-up Here</h3>
+
+        <label for="username">Email:</label>
+        <input type="text" placeholder="Email or Phone" id="username" [(ngModel)]="email" >
+
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Password" id="password" [(ngModel)]="password" >
+
+        <label for="password">Confirm Password:</label>
+        <input type="password" placeholder="Password" id="confirmPwd" [(ngModel)]="confirmPwd" >
+        <div class="btns">
+        <button class="btn btn-primary btn-large btn-block px-2 mt-3 btn1" (click)="register()" >Sign-up</button>
+        <button class="btn btn-primary btn-large btn-block px-2 mt-3 btn2" (click)="register()" >Login</button>
+        </div>
+      
+    </div>
+</body>
