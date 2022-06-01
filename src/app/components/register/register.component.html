@@ -9,20 +9,26 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <div class="form">
+    <div [formGroup]="userForm" (ngSubmit)="register()" class="form">
         <h3>Sign-up Here</h3>
-
+        <div class="col">
         <label for="username">Email:</label>
-        <input type="text" placeholder="Email or Phone" id="username" [(ngModel)]="email" >
+        <input type="text" formControlName="email" placeholder="Email"  id="username"  >
+        <span *ngIf="!userForm.controls['email'].valid && userForm.controls['email'].touched">*Email is required</span>
+        </div>
 
-        <label for="password">Password:</label>
-        <input type="password" placeholder="Password" id="password" [(ngModel)]="password" >
-
-        <label for="password">Confirm Password:</label>
-        <input type="password" placeholder="Password" id="confirmPwd" [(ngModel)]="confirmPwd" >
+        <div class="col">
+            <label for="password">Password:</label>
+            <input type="password" formControlName="password" placeholder="Password" id="password" >
+            <span *ngIf="!userForm.controls['password'].valid && userForm.controls['password'].touched">*Password is required</span>
+        </div>
+        <div>
+        <label for="confirmPwd">Confirm Password:</label>
+        <input type="password" formControlName="confirmPwd" placeholder="Password" id="confirmPwd"  >
+        </div>
         <div class="btns">
-        <button class="btn btn-primary btn-large btn-block px-2 mt-3 btn1" (click)="register()" >Sign-up</button>
-        <button class="btn btn-primary btn-large btn-block px-2 mt-3 btn2" (click)="register()" >Login</button>
+        <button class="btn btn-primary btn-large btn-block px-2 mt-1 btn1" (click)="register()" >Sign-up</button>
+        <button class="btn btn-primary btn-large btn-block px-2 mt-1 btn2" (click)="register()" >Login</button>
         </div>
       
     </div>

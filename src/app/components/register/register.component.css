@@ -108,3 +108,8 @@ button{
     border: none;
     background-color: inherit;
 }
+.col span{ 
+    color: red;
+    font-size: small;
+    margin-top: 0.25rem;
+ }
