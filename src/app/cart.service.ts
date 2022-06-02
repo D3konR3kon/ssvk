@@ -10,8 +10,12 @@ export class CartService {
   items: Product[] = [];
   /* . . . */
    constructor() {}
-     
+   calcTotal() {
+    return this.items.reduce((acc, prod) => acc+= prod.quantity ,0)
+   }
+   
     addToCart(product: Product) {
+      
       const productExistInCart = this.items.find(({name}) => name === product.name); // find product by name
    if (!productExistInCart) {
      this.items.push({...product}); // enhance "porduct" opject with "num" property
@@ -30,6 +34,7 @@ export class CartService {
   /* . . . */
   deletei(product: Product): void {
     this.items = this.items.filter(p => p !== product);
+    console.log(this.items.length)
     
   }
 

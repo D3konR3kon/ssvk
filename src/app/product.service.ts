@@ -18,7 +18,7 @@ export class ProductService {
     ) { }
 
   
-  /** GET heroes from the server */
+  /** GET products from the server */
 getProducts(): Observable<Product[]> {
   return this.http.get<Product[]>(this.productsUrl)
 }

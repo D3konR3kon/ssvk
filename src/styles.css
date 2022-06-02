@@ -1,14 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Poppins',sans-serif;
     background-color: rgba(122, 120, 120, 0.185);
 }
 .navbar-brand{
     color: navy !important;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 .nav-link{
     color: navy !important;
+    font-size: 1rem;
 }
 
 .card::before{

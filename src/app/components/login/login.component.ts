@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
       Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")
   ])
   }); 
-
+  token:any
   email: any
   password: any
   constructor(private router : Router) { }
@@ -38,20 +38,17 @@ export class LoginComponent implements OnInit {
 
 login(){
   this.email = this.userForm.value.email;
-  this.password = this.userForm.value.email;
+  this.password = this.userForm.value.password;
   let users = JSON.parse(`${localStorage.getItem('users')}`)
-  
-    users.filter((elem: any) => {
-      if((!this.password || !this.email) || (elem.email == !this.email || elem.password == !this.password)) 
-      return alert("Please ensure that you signing up first")
+ 
+    users.find((elem:any ) => {
+      if((elem.password != this.password) || (elem.email != this.email))
+       return console.log("Please provide correct details")
       
-      else if(elem.email == this.email && elem.password == this.password){
-        localStorage.setItem('token', JSON.stringify(elem))
-        this.router.navigate(['home'])
-       
-        return alert('Welcome')
-
-      }
+       else if(elem.password == this.password && elem.email == this.email)
+       localStorage.setItem('token', JSON.stringify(elem))
+        this.router.navigate(['home']) 
+       return alert('Welcome, hope you enjoy your shopping')
     })
 }
 }

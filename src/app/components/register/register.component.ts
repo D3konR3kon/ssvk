@@ -28,19 +28,19 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     
   }
+
   get emailer(){
     return this.userForm.get('email')
     }
   register(){
-    let data 
+    
     let user = {
       email: this.userForm.value.email,
       password: this.userForm.value.password
     }
-    console.log(this.userForm.value.confirmPwd)
     
     if(this.userForm.value.password === this.userForm.value.confirmPwd && this.userForm.value.password){
-      data = this.users.push(user)
+      this.users.push(user)
       localStorage.setItem('users', JSON.stringify(this.users))
         this.router.navigate(['/login'])
         return alert('Welcome to our site!')
