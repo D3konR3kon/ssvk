@@ -1,4 +1,5 @@
 
+<app-navbar></app-navbar>
 
 <!--<div class=" row cart-item" *ngFor="let item of items;let i=index">
 
@@ -38,7 +39,7 @@
 <div class="container mt-10">
     <div class="card">
             <div class="card-header">
-                <h2>YOUR TROLLEY SUMMARY</h2>
+                <h2>YOUR CART SUMMARY</h2>
             </div>
             <div class="card-body">
                 <div *ngIf="items.length === 0" class="alert alert-info">Your Cart is Empty.</div>
@@ -69,11 +70,16 @@
                     </div>
                 </div>
                 <hr>
-           
-            <div class="card-footer ms-auto">
-                
                 <div class="pull-right" style="margin: 5px">
+                    
                    <h4> Total Amount: <b>R{{totalAmount}}</b></h4>
+                </div>
+           
+            <div class="card-footer">
+                
+                <div class="footer" style="margin: 5px">
+                    <button class="btn btn-warning checkout" [disabled]="totalAmount === 0">Checkout</button>
+                   
                 </div>
                 </div>
   </div>

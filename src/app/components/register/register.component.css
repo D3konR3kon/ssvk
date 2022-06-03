@@ -6,8 +6,11 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #080710;
+    background-image:url("https://cdn.shopify.com/s/files/1/0717/1599/products/WineandDine_FabulousFlowers_800x.jpg?v=1651813874");
+    background-repeat: no-repeat;
     height: 100vh;
+    background-position: center;
+    background-size: cover;
 }
 .navbar-brand{
     font-size: 1.5rem;

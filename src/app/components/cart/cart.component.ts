@@ -20,9 +20,11 @@ export class CartComponent implements OnInit {
     this.getItems()
     this.Total();
   }
+  
   getItems(){
     this.items = this.cartService.getItems();
   }
+
   //delete item
   // deletei(id: any): void {
   //   let index = this.items.findIndex((item: { product_id: any; }) => item.product_id === id);
@@ -32,6 +34,7 @@ export class CartComponent implements OnInit {
   // }
   deletei(i: number): void {
     this.items.splice(i, 1);
+    this.items.length
     this.Total();
   
   }
@@ -83,6 +86,7 @@ export class CartComponent implements OnInit {
     incre(quantity: any, index: number){
       quantity++
       this.items[index].quantity = quantity
+      this.items.length
       this.Total()
     }
     decr(quantity: any, index: number){
@@ -90,6 +94,7 @@ export class CartComponent implements OnInit {
     if(quantity > 1)
     quantity--
       this.items[index].quantity = quantity
+      this.items.length
       this.Total()
      
     }

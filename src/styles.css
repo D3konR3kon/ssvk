@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body{
     font-family: 'Poppins',sans-serif;
-    background-color: rgba(122, 120, 120, 0.185);
+    
 }
 .navbar-brand{
     color: navy !important;
@@ -28,6 +28,9 @@ body{
 }
 .card-body{
     color: #3f345f;
+    font-style:italic;
+    font-weight: 500;
+    font-size: 1rem;
 }
 .btn-group{
     display: flex;
@@ -59,4 +62,11 @@ body{
     color: #ffffff;
     background-color: navy;
     border: 2px solid navy;
+}
+footer{
+    background-color:white;
+    text-align: center;
+    color: navy;
+    font-size: medium;
+    font-style: italic;
 }

@@ -11,14 +11,15 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
           </li>
+          
           <li class="nav-item">
-            <a class="nav-link" aria-current="page">Logout</a>
+            <a class="nav-link active" aria-current="page" routerLink="/login">Logout</a>
           </li>
         </ul>
         
         <button type="button" routerLink="/cart" class="btn btn-sm btn-outline-secondary vc2">
           <i class="fa fa-cart-plus" style="color: #fff;" aria-hidden="true"></i>
-          <div class="badge badge-danger">{{totalItems}}</div>
+          <div class="badge badge-danger">{{totalItems.length}}</div>
         </button>
       </div>
     </div>

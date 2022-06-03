@@ -43,3 +43,12 @@ button{
     border-radius: .5em;
     color: #ffffff;
 }
+.footer{
+    display: flex;
+    justify-content:right;
+   
+}
+.checkout{
+    width: 150px;
+    height: 70px;
+}

@@ -7,16 +7,21 @@ import { CartService } from 'src/app/cart.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-public totalItems:number = 0
+public totalItems :any
 
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    console.log(this.toto())
+    this.totalItems = this.cartService.getItems()
+    this.totalItems.length
     }
-toto(){
-  this.cartService.calcTotal()
-  }
+
+    
+    
+      
+    
+  
+
 }
 
 
