@@ -12,18 +12,23 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
   product !: Product
   items: any
-  totalAmount : number= 0
+  totalAmount = 0
+  total :any
  
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
     this.getItems()
-    this.Total();
+    this.Total()
+    
   }
   
   getItems(){
     this.items = this.cartService.getItems();
   }
+  // getTotals(){
+  //   this.total =this.cartService.Total();
+  // }
 
   //delete item
   // deletei(id: any): void {
@@ -87,7 +92,7 @@ export class CartComponent implements OnInit {
       quantity++
       this.items[index].quantity = quantity
       this.items.length
-      this.Total()
+      this.Total();
     }
     decr(quantity: any, index: number){
       
@@ -95,7 +100,7 @@ export class CartComponent implements OnInit {
     quantity--
       this.items[index].quantity = quantity
       this.items.length
-      this.Total()
+      this.Total();
      
     }
   

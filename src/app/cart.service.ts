@@ -8,11 +8,13 @@ import { Product } from './product';
 export class CartService {
 
   items: Product[] = [];
+  totalAmount = 0
   /* . . . */
    constructor() {}
    calcTotal() {
     return this.items.reduce((acc, prod) => acc+= prod.quantity ,0)
    }
+   
    
     addToCart(product: Product) {
       
@@ -39,4 +41,10 @@ export class CartService {
     
   }
 
+  Total() {
+    
+    this.items.forEach((item: { quantity: number; price: number; }) => {
+      this.totalAmount += (item.quantity * item.price)
+    })
+  }
 }

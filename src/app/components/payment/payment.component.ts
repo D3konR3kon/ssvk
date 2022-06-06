@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CartService } from 'src/app/cart.service';
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -7,8 +9,11 @@ import { Component } from '@angular/core';
 
 export class PaymentComponent {
   paymentHandler: any = null;
-  constructor() {}
-  ngOnInit() {
+  totAmount = this.cartService.Total()
+
+  constructor(private cartService : CartService) {}
+  ngOnInit(): void {
+    this.cartService.Total();
     this.invokeStripe();
   }
   makePayment(amount: any) {
