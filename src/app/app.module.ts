@@ -12,7 +12,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { Error404Component } from './components/error404/error404.component';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PaymentComponent } from './components/payment/payment.component'; // <-- NgModel lives here
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms'; // <-- NgModel
     RegisterComponent,
     CartComponent,
     ProductDetailsComponent,
-    Error404Component
+    Error404Component,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
