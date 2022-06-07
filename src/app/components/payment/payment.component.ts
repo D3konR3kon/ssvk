@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from 'src/app/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -8,17 +9,18 @@ import { CartService } from 'src/app/cart.service';
 })
 
 export class PaymentComponent {
+  totalAmount = JSON.parse(`${localStorage.getItem('Total')}`) 
   paymentHandler: any = null;
-  totAmount = this.cartService.Total()
+  //totAmount = this.cartService.Total()
 
-  constructor(private cartService : CartService) {}
+  constructor(private cartService : CartService, private router: Router) {}
   ngOnInit(): void {
-    this.cartService.Total();
+    ///this.cartService.Total();
     this.invokeStripe();
   }
   makePayment(amount: any) {
     const paymentHandler = (<any>window).StripeCheckout.configure({
-      key: 'pk_test_51H7bbSE2RcKvfXD4DZhu',
+      key: 'pk_test_qblFNYngBkEdjEZ16jxxoWSM',
       locale: 'auto',
       token: function (stripeToken: any) {
         console.log(stripeToken);
@@ -44,10 +46,14 @@ export class PaymentComponent {
           token: function (stripeToken: any) {
             console.log(stripeToken);
             alert('Payment has been successfull!');
+            
           },
         });
       };
+      
       window.document.body.appendChild(script);
+      
     }
+     
   }
 }

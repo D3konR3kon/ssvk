@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
   product !: Product
   items: any
-  totalAmount = 0
+  totalAmount = this.cartService.totalAmount
   total :any
  
   constructor(private cartService: CartService) { }
@@ -51,6 +51,7 @@ export class CartComponent implements OnInit {
     this.totalAmount = 0
     this.items.forEach((item: { quantity: number; price: number; }) => {
       this.totalAmount += (item.quantity * item.price)
+      localStorage.setItem('Total',JSON.stringify(this.totalAmount))
     })
   }
 

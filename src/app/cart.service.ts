@@ -11,9 +11,9 @@ export class CartService {
   totalAmount = 0
   /* . . . */
    constructor() {}
-   calcTotal() {
-    return this.items.reduce((acc, prod) => acc+= prod.quantity ,0)
-   }
+  //  calcTotal() {
+  //   return this.items.reduce((acc, prod) => acc+= prod.quantity ,0)
+  //  }
    
    
     addToCart(product: Product) {
@@ -41,10 +41,10 @@ export class CartService {
     
   }
 
-  Total() {
+//   Total() {
     
-    this.items.forEach((item: { quantity: number; price: number; }) => {
-      this.totalAmount += (item.quantity * item.price)
-    })
-  }
+//     this.items.forEach((item: { quantity: number; price: number; }) => {
+//       this.totalAmount += (item.quantity * item.price)
+//     })
+//   }
 }
