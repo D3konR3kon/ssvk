@@ -1,7 +1,7 @@
 <div class="container">
-    <h2 class="mt-5 mb-4">Angular Stripe Checkout Example</h2>
+    <h2 class="mt-5 mb-4"> Checkout</h2>
     <div class="col-md-5 mb-2">
-      <button (click)="makePayment(totalAmount)" class="btn btn-danger btn-block">Pay ${{totalAmount }}</button>
+      <button (click)="makePayment(totalAmount)" class="btn btn-danger btn-block">Pay {{totalAmount | currency:'R' }}</button>
     </div>
     
   </div>

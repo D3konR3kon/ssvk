@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import { CartService } from 'src/app/cart.service';
 export class NavbarComponent implements OnInit {
 public totalItems :any
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
     this.totalItems = this.cartService.getItems()
@@ -17,7 +18,10 @@ public totalItems :any
     }
 
     
-    
+    logout(){
+      localStorage.removeItem('token')
+      this.router.navigate(['/login'])
+    }
       
     
   

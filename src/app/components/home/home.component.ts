@@ -3,6 +3,7 @@ import { PRODUCTS } from '../../mock-products';
 import { Product } from '../../product';
 import { ProductService } from '../../product.service';
 import {CartService} from '../../cart.service'
+import { Router } from '@angular/router';
 
 
 
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
   products: Product[] = [];
   
  
-  constructor(private productService: ProductService, private cartService: CartService) { }
+  constructor(private productService: ProductService, private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
     
@@ -24,12 +25,18 @@ export class HomeComponent implements OnInit {
   addToCart(product: Product) {
 
     this.cartService.addToCart(product);
-    window.alert('Your product has been added to the cart!');
+    
   }
 
   getProduct(): void {
-    this.productService.getProducts()
+    if(!localStorage.getItem('token')) {
+      this.router.navigate(['/login'])
+      return alert("Please log in")}
+    else {
+      this.productService.getProducts()
         .subscribe(products => this.products = products);
+    }
+    
   }
   
 

@@ -20,15 +20,22 @@ export class PaymentComponent {
   }
   makePayment(amount: any) {
     const paymentHandler = (<any>window).StripeCheckout.configure({
-      key: 'pk_test_qblFNYngBkEdjEZ16jxxoWSM',
+      key: 'pk_test_51L7rKcDhBC8jyjnypr0JtrVsFuFe5Yti3kPElTx2rPqKEDmbR0edEj2g6smkIKOZWCxoLvSGi0dGQM70fClCAPDX00c31Mznwt',
       locale: 'auto',
       token: function (stripeToken: any) {
-        console.log(stripeToken);
-        alert('Stripe token generated!');
+        console.log({
+          id:stripeToken.id,
+          email:stripeToken.email,
+          type:stripeToken.object,
+          brand:stripeToken.card.brand,
+          funding:stripeToken.card.funding,
+          amount: `R${JSON.parse(`${localStorage.getItem('Total')}`)}`
+        });
+       
       },
     });
     paymentHandler.open({
-      name: 'Positronx',
+      name: 'SSVK',
       description: '3 widgets',
       amount: amount * 100,
     });
@@ -41,7 +48,7 @@ export class PaymentComponent {
       script.src = 'https://checkout.stripe.com/checkout.js';
       script.onload = () => {
         this.paymentHandler = (<any>window).StripeCheckout.configure({
-          key: 'pk_test_51H7bbSE2RcKvfXD4DZhu',
+          key: 'pk_test_51L7rKcDhBC8jyjnypr0JtrVsFuFe5Yti3kPElTx2rPqKEDmbR0edEj2g6smkIKOZWCxoLvSGi0dGQM70fClCAPDX00c31Mznwt',
           locale: 'auto',
           token: function (stripeToken: any) {
             console.log(stripeToken);

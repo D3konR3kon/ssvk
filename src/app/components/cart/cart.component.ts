@@ -15,7 +15,7 @@ export class CartComponent implements OnInit {
   totalAmount = this.cartService.totalAmount
   total :any
  
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private router : Router) { }
 
   ngOnInit(): void {
     this.getItems()
@@ -24,7 +24,13 @@ export class CartComponent implements OnInit {
   }
   
   getItems(){
-    this.items = this.cartService.getItems();
+    if(!localStorage.getItem('token')) {
+      this.router.navigate(['/login'])
+      return alert("Please log in")}
+      else{
+        this.items = this.cartService.getItems();
+      }
+    
   }
   // getTotals(){
   //   this.total =this.cartService.Total();

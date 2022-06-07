@@ -43,7 +43,7 @@ login(){
  
     users.find((elem:any ) => {
       if((elem.password != this.password) || (elem.email != this.email))
-       return console.log("Please provide correct details")
+       return alert("Please provide correct credentials")
       
        else if(elem.password == this.password && elem.email == this.email)
        localStorage.setItem('token', JSON.stringify(elem))
