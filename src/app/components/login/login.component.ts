@@ -48,7 +48,7 @@ login(){
        else if(elem.password == this.password && elem.email == this.email)
        localStorage.setItem('token', JSON.stringify(elem))
         this.router.navigate(['home']) 
-       return alert('Welcome, hope you enjoy your shopping')
+       return 
     })
 }
 }

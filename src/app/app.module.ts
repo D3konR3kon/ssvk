@@ -13,7 +13,9 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { Error404Component } from './components/error404/error404.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { PaymentComponent } from './components/payment/payment.component'; // <-- NgModel lives here
+import { PaymentComponent } from './components/payment/payment.component';
+
+// <-- NgModel lives here
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { PaymentComponent } from './components/payment/payment.component'; // <-
     CartComponent,
     ProductDetailsComponent,
     Error404Component,
-    PaymentComponent
+    PaymentComponent,
+   
+   
   ],
   imports: [
     BrowserModule,

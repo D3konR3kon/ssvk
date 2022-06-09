@@ -10,6 +10,7 @@ import { Error404Component } from './components/error404/error404.component';
 import { PaymentComponent } from './components/payment/payment.component';
 
 
+
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   { path:"payment", component:PaymentComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path:"cart", component:CartComponent },
   { path:"login", component:LoginComponent },
   { path:"navbar", component:NavbarComponent },
+  
   { path:"register", component:RegisterComponent },
   { path:"details/:id", component:ProductDetailsComponent },
   { path: '**', pathMatch: 'full', 

@@ -1,7 +1,38 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-light
+  ">
+    <div class="container mx-5">
+      <a class="navbar-brand">SSVK</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav m-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" (click)="logout()">Logout</a>
+          </li>
+        </ul>
+        
+        
+      </div>
+    </div>
+  </nav>
+</header>
+
 <div class="container">
     <h2 class="mt-5 mb-4"> Checkout</h2>
     <div class="col-md-5 mb-2">
       <button (click)="makePayment(totalAmount)" class="btn btn-danger btn-block">Pay {{totalAmount | currency:'R' }}</button>
     </div>
     
+    <div *ngIf="success">
+      <h1>Your Payment is complete successfully</h1>
+    </div>
+    <div *ngIf="failure">
+        <h1>Some Error is taken place inside the payment</h1>
+    </div>
   </div>

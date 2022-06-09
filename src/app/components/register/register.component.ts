@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
       this.users.push(user)
       localStorage.setItem('users', JSON.stringify(this.users))
         this.router.navigate(['/login'])
-        return alert('Welcome to our site!')
+        return 
     }else {
       alert('Please, fill in the requid fields');
     

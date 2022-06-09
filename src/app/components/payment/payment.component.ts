@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { CartService } from 'src/app/cart.service';
 import { Router } from '@angular/router';
 
@@ -11,12 +11,19 @@ import { Router } from '@angular/router';
 export class PaymentComponent {
   totalAmount = JSON.parse(`${localStorage.getItem('Total')}`) 
   paymentHandler: any = null;
+  success: boolean = false
+  
+  failure:boolean = false
   //totAmount = this.cartService.Total()
-
   constructor(private cartService : CartService, private router: Router) {}
   ngOnInit(): void {
     ///this.cartService.Total();
     this.invokeStripe();
+   
+  }
+  logout(){
+    localStorage.removeItem('token')
+    this.router.navigate(['/login'])
   }
   makePayment(amount: any) {
     const paymentHandler = (<any>window).StripeCheckout.configure({
@@ -31,12 +38,18 @@ export class PaymentComponent {
           funding:stripeToken.card.funding,
           amount: `R${JSON.parse(`${localStorage.getItem('Total')}`)}`
         });
-       
+        
       },
     });
+
+    
+
+
+
     paymentHandler.open({
       name: 'SSVK',
-      description: '3 widgets',
+      currency: 'ZAR',
+      description: 'Online Store',
       amount: amount * 100,
     });
   }
@@ -51,15 +64,15 @@ export class PaymentComponent {
           key: 'pk_test_51L7rKcDhBC8jyjnypr0JtrVsFuFe5Yti3kPElTx2rPqKEDmbR0edEj2g6smkIKOZWCxoLvSGi0dGQM70fClCAPDX00c31Mznwt',
           locale: 'auto',
           token: function (stripeToken: any) {
-            console.log(stripeToken);
             alert('Payment has been successfull!');
+            console.log(stripeToken);
             
           },
         });
       };
       
       window.document.body.appendChild(script);
-      
+      this.router.navigate(['/login'])
     }
      
   }
